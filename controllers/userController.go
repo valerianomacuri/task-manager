@@ -9,21 +9,8 @@ import (
 	"github.com/valerianomacuri/task-manager/models"
 	"go.mongodb.org/mongo-driver/bson"
 	"go.mongodb.org/mongo-driver/bson/primitive"
-	"go.mongodb.org/mongo-driver/mongo"
 	"golang.org/x/crypto/bcrypt"
 )
-
-type UserHandler struct {
-	collection *mongo.Collection
-	ctx        context.Context
-}
-
-func NewUserHandler(ctx context.Context, collection *mongo.Collection) *UserHandler {
-	return &UserHandler{
-		collection: collection,
-		ctx:        ctx,
-	}
-}
 
 // Handler for HTTP Post - "/users/register"
 // Add a new User document
