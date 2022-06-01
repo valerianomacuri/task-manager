@@ -10,6 +10,8 @@ import (
 	"go.mongodb.org/mongo-driver/mongo/readpref"
 )
 
+var ctx context.Context
+
 // Struct used for maintaining HTTP Request Context
 type Context struct {
 	mongo *mongo.Client
@@ -32,7 +34,7 @@ func (c *Context) DBCollection(name string) *mongo.Collection {
 
 // Create a new Context object for each HTTP request
 func NewContext() *Context {
-	ctx := context.TODO()
+	ctx = context.TODO()
 	client, err := mongo.Connect(ctx, options.Client().ApplyURI(common.AppConfig.MongoURI))
 	if err = client.Ping(ctx, readpref.Primary()); err != nil {
 		log.Fatal(err)

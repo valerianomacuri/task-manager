@@ -1,3 +1,6 @@
+###* users
+
+### POST register
 POST http://localhost:8080/users/register
 Content-Type: application/json
 
@@ -10,7 +13,7 @@ Content-Type: application/json
     }
 }
 
-###
+### POST login
 
 POST http://localhost:8080/users/login
 Content-Type: application/json
@@ -21,3 +24,60 @@ Content-Type: application/json
         "password": "passw0rd"
     }
 }
+
+###* tasks
+
+### POST create task
+POST http://localhost:8080/tasks
+Content-Type: application/json
+Authorization: eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoiYWJlbC52YWxlcmlhbm9AZ21haWwuY29tIiwicm9sZSI6Im1lbWJlciIsImV4cCI6MTY1NDExOTYwNiwiaXNzIjoiYWRtaW4ifQ.fyGTZby_s2MdYgZ9cABHVwVbv5J7AkhxeL5OpQNXfOKnOWTJBTcYhvx7Mh3hcjh5gM4hajyGw33O2RYIrj-8kKoDWsKZ0o2NF9RgOtzDlZsJp5XPPElHnd2t4cT_k1VAqy5RdNAs3i6C9Ezf4V_zAD7Fo2IFX-xXJEkt_KZNk34
+
+{
+    "data": {
+        "createdBy": "leonardo.valeriano@gmail.com",
+        "name": "Book - Chapter 01",
+        "description": "Complete book chapter on Fundamentals",
+        "tags": ["book", "golang", "programing"]
+    }
+}
+
+### GET all tasks
+GET http://localhost:8080/tasks
+Content-Type: application/json
+Authorization: eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoiYWJlbC52YWxlcmlhbm9AZ21haWwuY29tIiwicm9sZSI6Im1lbWJlciIsImV4cCI6MTY1NDExOTYwNiwiaXNzIjoiYWRtaW4ifQ.fyGTZby_s2MdYgZ9cABHVwVbv5J7AkhxeL5OpQNXfOKnOWTJBTcYhvx7Mh3hcjh5gM4hajyGw33O2RYIrj-8kKoDWsKZ0o2NF9RgOtzDlZsJp5XPPElHnd2t4cT_k1VAqy5RdNAs3i6C9Ezf4V_zAD7Fo2IFX-xXJEkt_KZNk34
+
+
+### GET single task
+GET http://localhost:8080/tasks/6297d432da337d44966e9e56
+Content-Type: application/json
+Authorization: eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoiYWJlbC52YWxlcmlhbm9AZ21haWwuY29tIiwicm9sZSI6Im1lbWJlciIsImV4cCI6MTY1NDExOTYwNiwiaXNzIjoiYWRtaW4ifQ.fyGTZby_s2MdYgZ9cABHVwVbv5J7AkhxeL5OpQNXfOKnOWTJBTcYhvx7Mh3hcjh5gM4hajyGw33O2RYIrj-8kKoDWsKZ0o2NF9RgOtzDlZsJp5XPPElHnd2t4cT_k1VAqy5RdNAs3i6C9Ezf4V_zAD7Fo2IFX-xXJEkt_KZNk34
+
+
+
+### PUT task
+PUT http://localhost:8080/tasks/6297d432da337d44966e9e56
+Content-Type: application/json
+Authorization: eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoiYWJlbC52YWxlcmlhbm9AZ21haWwuY29tIiwicm9sZSI6Im1lbWJlciIsImV4cCI6MTY1NDExOTYwNiwiaXNzIjoiYWRtaW4ifQ.fyGTZby_s2MdYgZ9cABHVwVbv5J7AkhxeL5OpQNXfOKnOWTJBTcYhvx7Mh3hcjh5gM4hajyGw33O2RYIrj-8kKoDWsKZ0o2NF9RgOtzDlZsJp5XPPElHnd2t4cT_k1VAqy5RdNAs3i6C9Ezf4V_zAD7Fo2IFX-xXJEkt_KZNk34
+
+{
+    "data": {
+      "name": "Book - Chapter 9",
+      "description": "Complete book chapter on REST API",
+      "due": "0001-01-01T00:00:00Z",
+      "status": "Updated",
+      "tags": [
+        "golang"
+      ]
+    }
+}
+
+### DELETE task
+DELETE http://localhost:8080/tasks/6297d432da337d44966e9e56
+Content-Type: application/json
+Authorization: eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoiYWJlbC52YWxlcmlhbm9AZ21haWwuY29tIiwicm9sZSI6Im1lbWJlciIsImV4cCI6MTY1NDExOTYwNiwiaXNzIjoiYWRtaW4ifQ.fyGTZby_s2MdYgZ9cABHVwVbv5J7AkhxeL5OpQNXfOKnOWTJBTcYhvx7Mh3hcjh5gM4hajyGw33O2RYIrj-8kKoDWsKZ0o2NF9RgOtzDlZsJp5XPPElHnd2t4cT_k1VAqy5RdNAs3i6C9Ezf4V_zAD7Fo2IFX-xXJEkt_KZNk34
+
+### GET tasks by user
+GET http://localhost:8080/tasks/users/leonardo.valeriano@gmail.com
+Content-Type: application/json
+Authorization: eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoiYWJlbC52YWxlcmlhbm9AZ21haWwuY29tIiwicm9sZSI6Im1lbWJlciIsImV4cCI6MTY1NDExOTYwNiwiaXNzIjoiYWRtaW4ifQ.fyGTZby_s2MdYgZ9cABHVwVbv5J7AkhxeL5OpQNXfOKnOWTJBTcYhvx7Mh3hcjh5gM4hajyGw33O2RYIrj-8kKoDWsKZ0o2NF9RgOtzDlZsJp5XPPElHnd2t4cT_k1VAqy5RdNAs3i6C9Ezf4V_zAD7Fo2IFX-xXJEkt_KZNk3
+4
