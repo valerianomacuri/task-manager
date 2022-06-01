@@ -1,0 +1,4 @@
+{
+    "MongoURI": "mongodb://[user]:[password]@localhost:[PORT]/test?authSource=admin",
+    "Database": "[database]"
+}
