@@ -20,3 +20,32 @@ go get go.mongodb.org/mongo-driver/mongo
 
 ## Mongo URI
 ![connection uri parts](connection_uri_parts.png)
+
+## Mongo SHELL Comands
+
+* [Documentación](https://www.mongodb.com/docs/manual/reference/mongo-shell/)
+
+Mostrar bases de datos:
+```console
+show dbs
+```
+
+Usar una base de datos:
+```console
+use taskdb
+```
+
+Mostrar las colecciones de una base de datos:
+```console
+show collections
+```
+
+Mostrar todos los documentos de una colección:
+```console
+db.<collection>.find()
+```
+
+Borrar un documento de una colección:
+```console
+db.<collection>.deleteOne( { "_id" : ObjectId("[id]") } )
+```
