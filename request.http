@@ -3,10 +3,10 @@ Content-Type: application/json
 
 {
     "data": {
-        "firstname": "leonardo",
+        "firstname": "abel",
         "lastname": "valeriano",
-        "email": "leonardo.valeriano@gmail.com",
-        "password": "pass123"
+        "email": "abel.valeriano@gmail.com",
+        "password": "passw0rd"
     }
 }
 
@@ -17,7 +17,7 @@ Content-Type: application/json
 
 {
     "data": {
-        "email": "leonardo.valeriano@gmail.com",
-        "password": "pass123"
+        "email": "abel.valeriano@gmail.com",
+        "password": "passw0rd"
     }
 }
