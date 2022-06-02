@@ -86,6 +86,17 @@ func (r *TaskRepository) Update(task *models.Task) error {
 		{"status", task.Status},
 		{"tags", task.Tags},
 	}}})
+
+	// alternative update
+	// _, err := r.collection.UpdateOne(ctx, bson.M{
+	// 	"_id": task.Id,
+	// }, bson.D{{"$set", bson.D{
+	// 	{Key: "name", Value: task.Name},
+	// 	{Key: "description", Value: task.Description},
+	// 	{Key: "due", Value: task.Due},
+	// 	{Key: "tags", Value: task.Tags},
+	// 	{Key: "status", Value: task.Status},
+	// }}})
 	return err
 }
 
