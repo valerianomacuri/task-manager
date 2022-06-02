@@ -10,16 +10,15 @@ import (
 	"go.mongodb.org/mongo-driver/mongo/readpref"
 )
 
-var ctx context.Context
-
 // Struct used for maintaining HTTP Request Context
 type Context struct {
 	mongo *mongo.Client
+	ctx   context.Context
 }
 
 // Close mongo.Client
 func (c *Context) Close() {
-	err := c.mongo.Disconnect(context.TODO())
+	err := c.mongo.Disconnect(c.ctx)
 	if err != nil {
 		log.Println("failed to disconnect")
 		return
@@ -34,7 +33,7 @@ func (c *Context) DBCollection(name string) *mongo.Collection {
 
 // Create a new Context object for each HTTP request
 func NewContext() *Context {
-	ctx = context.TODO()
+	ctx := context.TODO()
 	client, err := mongo.Connect(ctx, options.Client().ApplyURI(common.AppConfig.MongoURI))
 	if err = client.Ping(ctx, readpref.Primary()); err != nil {
 		log.Fatal(err)
@@ -42,5 +41,6 @@ func NewContext() *Context {
 	log.Println("Connected to MongoDB")
 	return &Context{
 		mongo: client,
+		ctx:   ctx,
 	}
 }

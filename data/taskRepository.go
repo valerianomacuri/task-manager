@@ -10,8 +10,6 @@ import (
 	"go.mongodb.org/mongo-driver/mongo"
 )
 
-var ctx context.Context
-
 type TaskRepository struct {
 	collection *mongo.Collection
 }
@@ -30,7 +28,7 @@ func (r *TaskRepository) Create(task *models.Task) error {
 }
 
 func (r *TaskRepository) GetAll() ([]models.Task, error) {
-	ctx = context.TODO()
+	ctx := context.TODO()
 	cur, err := r.collection.Find(ctx, bson.M{})
 	if err != nil {
 		return []models.Task{}, err
@@ -46,7 +44,7 @@ func (r *TaskRepository) GetAll() ([]models.Task, error) {
 }
 
 func (r *TaskRepository) GetById(id string) (models.Task, error) {
-	ctx = context.TODO()
+	ctx := context.TODO()
 	objectId, _ := primitive.ObjectIDFromHex(id)
 	cur := r.collection.FindOne(ctx, bson.M{
 		"_id": objectId,
@@ -75,7 +73,7 @@ func (r *TaskRepository) GetByUser(user string) ([]models.Task, error) {
 }
 
 func (r *TaskRepository) Update(task *models.Task) error {
-	ctx = context.TODO()
+	ctx := context.TODO()
 	// partial update on MogoDB
 	_, err := r.collection.UpdateOne(ctx, bson.M{
 		"_id": task.Id,
@@ -101,7 +99,7 @@ func (r *TaskRepository) Update(task *models.Task) error {
 }
 
 func (r *TaskRepository) Delete(id string) error {
-	ctx = context.TODO()
+	ctx := context.TODO()
 	objectId, _ := primitive.ObjectIDFromHex(id)
 	_, err := r.collection.DeleteOne(ctx, bson.M{"_id": objectId})
 	return err

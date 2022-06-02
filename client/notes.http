@@ -1,0 +1,47 @@
+###* notes
+
+### * POST create note 
+POST http://localhost:8080/notes
+Content-Type: application/json
+Authorization: eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoiYWJlbC52YWxlcmlhbm9AZ21haWwuY29tIiwicm9sZSI6Im1lbWJlciIsImV4cCI6MTY1NDIwODEwNCwiaXNzIjoiYWRtaW4ifQ.RSEUCyJ7A2jwCAQOMrGqFT7UJ66aOTsZNweVTquHbsjWZqqxpsQqkI3z2VGvMnsKW8G6mmVLUVN2hs5rjsNY1EwBmwyIgTVECg6CRYiS_bLdMmt0fsAYESIux7xWwE8Cs4ezsl_4Z-CQHaiFc8QFE_Q6-ykKynCugcOfEL2E-tg
+
+{
+    "data": {
+      "taskid": "6297d432da337d44966e9e56",
+      "description": "Hello Rust!"
+    }
+}
+
+### * GET notes by task
+GET http://localhost:8080/notes/tasks/6297d432da337d44966e9e56
+Content-Type: application/json
+Authorization: eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoiYWJlbC52YWxlcmlhbm9AZ21haWwuY29tIiwicm9sZSI6Im1lbWJlciIsImV4cCI6MTY1NDIwODEwNCwiaXNzIjoiYWRtaW4ifQ.RSEUCyJ7A2jwCAQOMrGqFT7UJ66aOTsZNweVTquHbsjWZqqxpsQqkI3z2VGvMnsKW8G6mmVLUVN2hs5rjsNY1EwBmwyIgTVECg6CRYiS_bLdMmt0fsAYESIux7xWwE8Cs4ezsl_4Z-CQHaiFc8QFE_Q6-ykKynCugcOfEL2E-tg
+
+### * GET all notes
+GET http://localhost:8080/notes
+Content-Type: application/json
+Authorization: eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoiYWJlbC52YWxlcmlhbm9AZ21haWwuY29tIiwicm9sZSI6Im1lbWJlciIsImV4cCI6MTY1NDIwODEwNCwiaXNzIjoiYWRtaW4ifQ.RSEUCyJ7A2jwCAQOMrGqFT7UJ66aOTsZNweVTquHbsjWZqqxpsQqkI3z2VGvMnsKW8G6mmVLUVN2hs5rjsNY1EwBmwyIgTVECg6CRYiS_bLdMmt0fsAYESIux7xWwE8Cs4ezsl_4Z-CQHaiFc8QFE_Q6-ykKynCugcOfEL2E-tg
+
+
+### * GET single note
+GET http://localhost:8080/notes/62993232d52a4977b8e1694e
+Content-Type: application/json
+Authorization: eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoiYWJlbC52YWxlcmlhbm9AZ21haWwuY29tIiwicm9sZSI6Im1lbWJlciIsImV4cCI6MTY1NDIwODEwNCwiaXNzIjoiYWRtaW4ifQ.RSEUCyJ7A2jwCAQOMrGqFT7UJ66aOTsZNweVTquHbsjWZqqxpsQqkI3z2VGvMnsKW8G6mmVLUVN2hs5rjsNY1EwBmwyIgTVECg6CRYiS_bLdMmt0fsAYESIux7xWwE8Cs4ezsl_4Z-CQHaiFc8QFE_Q6-ykKynCugcOfEL2E-tg
+
+
+
+### * PUT note
+PUT http://localhost:8080/notes/62993232d52a4977b8e1694e
+Content-Type: application/json
+Authorization: eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoiYWJlbC52YWxlcmlhbm9AZ21haWwuY29tIiwicm9sZSI6Im1lbWJlciIsImV4cCI6MTY1NDIwODEwNCwiaXNzIjoiYWRtaW4ifQ.RSEUCyJ7A2jwCAQOMrGqFT7UJ66aOTsZNweVTquHbsjWZqqxpsQqkI3z2VGvMnsKW8G6mmVLUVN2hs5rjsNY1EwBmwyIgTVECg6CRYiS_bLdMmt0fsAYESIux7xWwE8Cs4ezsl_4Z-CQHaiFc8QFE_Q6-ykKynCugcOfEL2E-tg
+
+{
+    "data": {
+      "description": "Hello Python3!"
+    }
+}
+
+### DELETE note
+DELETE http://localhost:8080/notes/62993229d52a4977b8e1694c
+Content-Type: application/json
+Authorization: eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoiYWJlbC52YWxlcmlhbm9AZ21haWwuY29tIiwicm9sZSI6Im1lbWJlciIsImV4cCI6MTY1NDIwODEwNCwiaXNzIjoiYWRtaW4ifQ.RSEUCyJ7A2jwCAQOMrGqFT7UJ66aOTsZNweVTquHbsjWZqqxpsQqkI3z2VGvMnsKW8G6mmVLUVN2hs5rjsNY1EwBmwyIgTVECg6CRYiS_bLdMmt0fsAYESIux7xWwE8Cs4ezsl_4Z-CQHaiFc8QFE_Q6-ykKynCugcOfEL2E-tg
